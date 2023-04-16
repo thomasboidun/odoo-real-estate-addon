@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <!-- Top menu item -->
+
+        <menuitem name="Biens Immobiliers" id="real_estate.menu_root" />
+
+        <!-- menu categories -->
+
+        <menuitem name="Annonces" id="real_estate.advertisement" parent="real_estate.menu_root" />
+
+        <!-- actions -->
+
+        <menuitem name="Propriétés" id="real_estate.properties" parent="real_estate.advertisement"
+            action="real_estate.action_window" />
+    </data>
+</odoo>

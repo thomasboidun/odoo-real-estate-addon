@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="real_estate.action_window">
+            <field name="name">Propriétés</field>
+            <field name="res_model">realestate.properties</field>
+            <field name="view_mode">kanban,tree,form,calendar,pivot,gantt,graph</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="real_estate_tree">
+            <field name="name">real_estate list</field>
+            <field name="model">realestate.properties</field>
+            <field name="arch" type="xml">
+                <tree decoration-primary="status=='new'"
+                    decoration-warning="status=='offer_received'"
+                    decoration-danger="status=='sold'" decoration-success="status=='offer_accepted'"
+                    decoration-muted="status=='canceled'">
+                    <field name="name" decoration-bf="name" />
+                    <field name="status" />
+                    <field name="post_code" />
+
+                    <field name="bedrooms" />
+                    <field name="facades" />
+                    <field name="garage" />
+                    <field name="garden" />
+                    <field name="garden_orientation" />
+                    
+                    <field name="living_area" />
+                    <field name="garden_area" />
+                    <field name="total_area" />
+
+                    <field name="expected_price" />
+                    <field name="selling_price" />
+
+                    <field name="available_from" />
+                    <field name="deadline" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

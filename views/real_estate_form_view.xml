@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="real_estate_form">
+            <field name="name">real_estate form</field>
+            <field name="model">realestate.properties</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <notebook>
+                            <page string="Information">
+                                <group>
+                                    <group>
+                                        <field name="status" />
+                                        <field name="post_code" />
+                                        <field name="description" />
+                                    </group>
+                                    <group>
+                                        <field name="photo" widget='image' class='oe_avatar' />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Détails">
+                                <group>
+                                    <group>
+                                        <field name="facades" />
+                                        <field name="bedrooms" />
+                                        <field name="garage" />
+                                        <field name="garden" />
+                                        <field name="garden_orientation"
+                                            attrs="{'invisible':[('garden', '==', False)]}" />
+                                    </group>
+                                    <group>
+                                        <field name="living_area" />
+                                        <field name="garden_area"
+                                            attrs="{'invisible':[('garden', '==', False)]}" />
+                                        <field name="total_area" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Prix et disponibilité">
+                                <group>
+                                    <group string="Prix">
+                                        <field name="sqm_price" />
+                                        <field name="expected_price" />
+                                        <field name="selling_price" />
+                                    </group>
+                                    <group string="Disponibilité">
+                                        <field name="available_from" />
+                                        <field name="deadline" />
+                                        <field name="active" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Contact">
+                                <group>
+                                    <field name="owner_id" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
