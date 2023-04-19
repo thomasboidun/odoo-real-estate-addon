@@ -22,12 +22,15 @@
                     <field name="garden_area" />
                     <field name="status" />
                     <!-- Filter -->
-                    <filter string='Propriétés disponibles' name='filter_by_properties'
-                        domain="['|', ('status', '=', 'new'), ('status', '=', 'offer_received')]" />
+                    <filter string='Nouvelles propriétés' name='filter_by_properties' domain="[('status', '=', 'new')]" />
+                    <filter string='Offre reçue' name='filter_by_properties' domain="[('status', '=', 'offer_received')]" />
+                    <filter string='Offre acceptée' name='filter_by_properties' domain="[('status', '=', 'offer_accepted')]" />
+                    <filter string='Propriétés vendues' name='filter_by_properties' domain="[('status', '=', 'sold')]" />
+                    <filter string='Ventes annulées' name='filter_by_properties' domain="[('status', '=', 'canceled')]" />
                     <!-- Group By -->
-                    <filter string='Code Postal' name='group_by_postcode'
-                        context='{"group_by":"post_code"}' />
                     <filter string='Statut' name='group_by_status' context='{"group_by":"status"}' />
+                    <filter string='Code Postal' name='group_by_postcode' context='{"group_by":"post_code"}' />
+                    <filter string='Chargé de vente' name='group_by_owner_id' context='{"group_by":"owner_id"}' />
                 </search>
             </field>
         </record>
