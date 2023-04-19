@@ -10,7 +10,7 @@
     """,
 
     'author': "Thomas BOIDUN",
-    
+    'website': 'https://github.com/thomasboidun/odoo-real-estate-addon',
 
     'application': True,
     'version': '1.0',
