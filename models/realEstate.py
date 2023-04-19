@@ -28,7 +28,7 @@ class realEstate(models.Model):
     )
 
     available_from = fields.Date(string="Disponible à partir de", default=fields.datetime.now())
-    deadline = fields.Date(string="Délais (en jour)", inverse="_inverse_total")
+    deadline = fields.Date(string="Date butoire", inverse="_inverse_total")
 
     sqm_price = fields.Float(string="Prix du m²", default=4628.00)
     expected_price = fields.Float(string="Prix attendu")
@@ -55,8 +55,8 @@ class realEstate(models.Model):
 
     total_area = fields.Float(string="Surface Totale (m²)", read_only=True, compute="_calc_total_area_and_selling_price")
 
-    _inherits = {'res.users':'owner_id'}
-    owner_id = fields.Many2one("res.users", string="Chargée de la vente")
+    _inherits = {'hr.employee':'owner_id'}
+    owner_id = fields.Many2one("hr.employee", string="Chargée de la vente")
 
     _sql_constraints = [
         ('expected_price_constraint', 'CHECK(expected_price >= 0)', 'Le prix attendu doit être positif et supérieur à 0.'),

@@ -14,7 +14,7 @@
 
     'application': True,
     'version': '1.0',
-    'depends': ['base'],
+    'depends': ['base', 'hr'],
 
     # data files always loaded at installation
     'data': [
