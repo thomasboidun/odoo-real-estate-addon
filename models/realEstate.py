@@ -31,7 +31,7 @@ class realEstate(models.Model):
     deadline = fields.Date(string="Date butoire", inverse="_inverse_total")
 
     sqm_price = fields.Float(string="Prix du m²", default=4628.00)
-    expected_price = fields.Float(string="Prix attendu")
+    expected_price = fields.Float(string="Prix attendu", inverse="_calc_expected_price")
     selling_price = fields.Float(string="Prix estimé", read_only=True, copy=False, compute="_calc_total_area_and_selling_price")
 
     living_area = fields.Integer(string="Surface habitable (m²)", default=100)
@@ -59,7 +59,7 @@ class realEstate(models.Model):
     owner_id = fields.Many2one("hr.employee", string="Chargée de la vente")
 
     _sql_constraints = [
-        ('expected_price_constraint', 'CHECK(expected_price >= 0)', 'Le prix attendu doit être positif et supérieur à 0.'),
+        ('expected_price_constraint', 'CHECK(expected_price > 0)', 'Le prix attendu doit être positif et supérieur à 0.'),
         ('living_area_constraint', 'CHECK(living_area > 0)', 'La surface habitable doit être positive et supérieure à 0.'),
     ]
 
@@ -87,5 +87,5 @@ class realEstate(models.Model):
     @api.depends("expected_price")
     def _calc_expected_price(self):
         for record in self:
-            if record.expected_price == 0:
+            if record.expected_price <= 0:
                 record.expected_price = record.selling_price
