@@ -11,22 +11,15 @@
                     <field name="name" decoration-bf="name" />
                     <field name="status" />
                     <field name="post_code" />
-
-                    <field name="bedrooms" />
-                    <field name="facades" />
+                    <field name="bedrooms" string="Chambres" />
+                    <field name="facades" string="Facades" />
                     <field name="garage" />
                     <field name="garden" />
-                    <field name="garden_orientation" />
-                    
-                    <field name="living_area" />
-                    <field name="garden_area" />
                     <field name="total_area" />
-
                     <field name="expected_price" />
-                    <field name="selling_price" />
-
                     <field name="available_from" />
                     <field name="deadline" />
+                    <field name="owner_id" />
                 </tree>
             </field>
         </record>
