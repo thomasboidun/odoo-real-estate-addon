@@ -4,7 +4,7 @@
         <record model="ir.actions.act_window" id="real_estate.action_window">
             <field name="name">Propriétés</field>
             <field name="res_model">realestate.properties</field>
-            <field name="view_mode">kanban,tree,form,calendar,pivot,gantt,graph</field>
+            <field name="view_mode">tree,form</field>
         </record>
     </data>
 </odoo>

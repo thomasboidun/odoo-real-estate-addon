@@ -21,10 +21,7 @@
         'security/ir.model.access.csv',
         
         'views/real_estate_menu_views.xml',
-        'views/real_estate_kanban_view.xml',
         'views/real_estate_list_view.xml',
-        'views/real_estate_calendar_view.xml',
-        'views/real_estate_gantt_view.xml',
         'views/real_estate_search_view.xml',
         'views/real_estate_action_view.xml',
         'views/real_estate_form_view.xml',
